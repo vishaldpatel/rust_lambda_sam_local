@@ -47,5 +47,7 @@ We now have the Rust project setup. We can try to compile it. Follow the "Buildi
 - sam local start-api -t ./template.yaml
 Once it starts up, you can go to http://127.0.0.1:3000/ in your browser. Your first request will trigger the system to start downloading the docker image for lambdas that run a "provided" runtime. This can take a little while if you're, like me, working out of a coffee shop with a slow internet connection. When the download completes, the system will run your Rust binary to respond to the browser's request. You're all set! Barebones Rust lambda function running locally! =)
 
-Once you're happy with your work, you'll probably want to deploy it to AWS. To do that, follow Steps #3 and #4 from here: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-quick-start.html
+---
+
+8. Once you're happy with your work, you'll probably want to deploy it to AWS. To do that, follow Steps #3 and #4 from here: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-quick-start.html
 - Basically, you have to upload the zip file to an S3 bucket, and then update the create a second template.yaml where the code-url property is set to the address of the s3 bucket. You'd then run the 'sam deploy' command. Seems pretty straight forward, although I haven't tried it myself yet.
